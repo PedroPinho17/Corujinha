@@ -1,0 +1,1 @@
+# Monolitic_CQRS_Template

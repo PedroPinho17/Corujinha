@@ -1,0 +1,3 @@
+[submodule "AnotherDotnetToolKit"]
+	path = AnotherDotnetToolKit
+	url = https://github.com/Hugo8220337/AnotherDotnetToolKit.git
