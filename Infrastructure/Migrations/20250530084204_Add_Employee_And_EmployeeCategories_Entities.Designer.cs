@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Monolitic_CQRS_Template.Infrastructure;
+using CorujinhaAPI.Infrastructure;
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(ExampleProjectDbContext))]
+    [DbContext(typeof(CorujinhaDbContext))]
     [Migration("20250530084204_Add_Employee_And_EmployeeCategories_Entities")]
     partial class Add_Employee_And_EmployeeCategories_Entities
     {
@@ -25,7 +25,7 @@ namespace Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Monolitic_CQRS_Template.Domain.entities.Employee", b =>
+            modelBuilder.Entity("CorujinhaAPI.Domain.entities.Employee", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("Employee", (string)null);
                 });
 
-            modelBuilder.Entity("Monolitic_CQRS_Template.Domain.entities.EmployeeCategory", b =>
+            modelBuilder.Entity("CorujinhaAPI.Domain.entities.EmployeeCategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

@@ -2,7 +2,7 @@
 using Application.HumanResources.Employees;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Monolitic_CQRS_Template.Domain.entities;
+using CorujinhaAPI.Domain.entities;
 
 namespace WebAPI.Controllers
 {

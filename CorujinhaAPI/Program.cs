@@ -1,16 +1,16 @@
 using AnotherDotnetToolkit;
 using Application.HumanResourcesDomainModule;
 using Microsoft.EntityFrameworkCore;
-using Monolitic_CQRS_Template.Infrastructure;
+using CorujinhaAPI.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<ExampleProjectDbContext>(options =>
+builder.Services.AddDbContext<CorujinhaDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"));
 });
-builder.Services.AddScoped<DbContext>(provider => provider.GetService<ExampleProjectDbContext>()); // Registar ExampleProjectDbContext como DbContext
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<CorujinhaDbContext>()); // Registar CorujinhaDbContext como DbContext
 
 // Add Dependecies from HumanResources
 builder.Services.RegisterHumanResourcesServices();

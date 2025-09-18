@@ -7,7 +7,7 @@ using Application.HumanResources.EmployeeCategories;
 using Application.HumanResources.Employees;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Monolitic_CQRS_Template.Domain.entities;
+using CorujinhaAPI.Domain.entities;
 
 namespace Application.HumanResourcesDomainModule
 {

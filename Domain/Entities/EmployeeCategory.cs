@@ -1,6 +1,6 @@
 ﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
 
-namespace Monolitic_CQRS_Template.Domain.entities
+namespace CorujinhaAPI.Domain.entities
 {
     public class EmployeeCategory : IEntity
     {

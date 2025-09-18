@@ -1,5 +1,5 @@
 ﻿using AnotherDotnetToolkit.MediatR.Commands;
-using Monolitic_CQRS_Template.Domain.entities;
+using CorujinhaAPI.Domain.entities;
 
 namespace Application.HumanResources.EmployeeCategories
 {

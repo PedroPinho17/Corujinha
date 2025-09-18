@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Monolitic_CQRS_Template.Infrastructure;
+using CorujinhaAPI.Infrastructure;
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(ExampleProjectDbContext))]
+    [DbContext(typeof(CorujinhaDbContext))]
     partial class ExampleProjectDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Monolitic_CQRS_Template.Domain.entities.Employee", b =>
+            modelBuilder.Entity("CorujinhaAPI.Domain.entities.Employee", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("Employee");
                 });
 
-            modelBuilder.Entity("Monolitic_CQRS_Template.Domain.entities.EmployeeCategory", b =>
+            modelBuilder.Entity("CorujinhaAPI.Domain.entities.EmployeeCategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,9 +70,9 @@ namespace Infrastructure.Migrations
                     b.ToTable("EmployeeCategory");
                 });
 
-            modelBuilder.Entity("Monolitic_CQRS_Template.Domain.entities.Employee", b =>
+            modelBuilder.Entity("CorujinhaAPI.Domain.entities.Employee", b =>
                 {
-                    b.HasOne("Monolitic_CQRS_Template.Domain.entities.EmployeeCategory", "EmployeeCategory")
+                    b.HasOne("CorujinhaAPI.Domain.entities.EmployeeCategory", "EmployeeCategory")
                         .WithMany()
                         .HasForeignKey("EmployeeCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)

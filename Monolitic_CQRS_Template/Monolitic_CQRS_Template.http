@@ -1,6 +1,0 @@
-@Monolitic_CQRS_Template_HostAddress = http://localhost:5017
-
-GET {{Monolitic_CQRS_Template_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

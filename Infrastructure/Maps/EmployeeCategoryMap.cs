@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Monolitic_CQRS_Template.Domain.entities;
+using CorujinhaAPI.Domain.entities;
 
 namespace Infrastructure.Maps
 {

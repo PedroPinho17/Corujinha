@@ -2,9 +2,9 @@
 using Application.HumanResources.EmployeeCategories;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Monolitic_CQRS_Template.Domain.entities;
+using CorujinhaAPI.Domain.entities;
 
-namespace Monolitic_CQRS_Template.Controllers
+namespace CorujinhaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
