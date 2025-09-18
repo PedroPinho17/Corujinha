@@ -3,7 +3,7 @@ using Monolitic_CQRS_Template.Domain.entities;
 
 namespace Application.HumanResources.EmployeeCategories
 {
-    public class GetAllEmployeeCategoriesQuery : IGetAllQuery<IReadOnlyList<EmployeeCategory>?>
+    public class GetAllEmployeeCategoriesQuery : GetAllQuery<EmployeeCategory>, IGetAllQuery<IReadOnlyList<EmployeeCategory>?>
     {
     }
 
