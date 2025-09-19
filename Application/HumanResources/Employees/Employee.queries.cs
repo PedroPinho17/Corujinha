@@ -11,8 +11,11 @@ namespace Application.HumanResources.Employees
         }
     }
 
-    public class GetEmployeeByIdQuery : IGetByIdQuery<Employee?>
+    public class GetEmployeeByIdQuery : GetByIdQuery<Employee>, IGetByIdQuery<Employee?>
     {
-        public Guid EntityId { get; set; }
+        public GetEmployeeByIdQuery()
+        {
+            IncludeParameters = ["EmployeeCategory"];
+        }
     }
 }

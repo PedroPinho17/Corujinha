@@ -7,8 +7,7 @@ namespace Application.HumanResources.EmployeeCategories
     {
     }
 
-    public class GetEmployeeCategoryByIdQuery : IGetByIdQuery<EmployeeCategory?>
+    public class GetEmployeeCategoryByIdQuery : GetByIdQuery<Employee>,  IGetByIdQuery<EmployeeCategory?>
     {
-        public Guid EntityId { get; set; }
     }
 }
