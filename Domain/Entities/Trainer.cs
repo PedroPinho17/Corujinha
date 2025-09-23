@@ -1,9 +1,12 @@
-﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
+﻿using AnotherDotnetToolkit.AspNetCore;
+using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class Trainer : IEntity
-    // Represents a trainer or instructor for training sessions (formador)
+    /**
+     * Represents a trainer or instructor for training sessions (formador)
+     */
+    public class Trainer : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

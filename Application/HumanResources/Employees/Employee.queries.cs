@@ -1,5 +1,5 @@
 ﻿using AnotherDotnetToolkit.MediatR.Queries;
-using CorujinhaAPI.Domain.entities;
+using CorujinhaAPI.Domain.Entities;
 
 namespace Application.HumanResources.Employees
 {

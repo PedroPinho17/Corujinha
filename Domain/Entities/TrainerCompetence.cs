@@ -1,8 +1,9 @@
-﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
+﻿using AnotherDotnetToolkit.AspNetCore;
+using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class TrainerCompetence : IEntity
+    public class TrainerCompetence : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
         public Trainer TrainerId { get; set; }

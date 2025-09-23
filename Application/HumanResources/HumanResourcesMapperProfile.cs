@@ -1,7 +1,6 @@
-﻿using Application.HumanResources.EmployeeCategories;
-using Application.HumanResources.Employees;
+﻿using Application.HumanResources.Employees;
 using AutoMapper;
-using CorujinhaAPI.Domain.entities;
+using CorujinhaAPI.Domain.Entities;
 
 namespace Application.HumanResources
 {
@@ -9,7 +8,6 @@ namespace Application.HumanResources
     {
         public HumanResourcesMapperProfile()
         {
-            CreateMap<EmployeeCategoryCreateCommand, EmployeeCategory>().ReverseMap();
             CreateMap<EmployeeCreateCommand, Employee>().ReverseMap();
         }
     }

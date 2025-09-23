@@ -1,8 +1,9 @@
-﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
+﻿using AnotherDotnetToolkit.AspNetCore;
+using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class Competence : IEntity
+    public class Competence : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

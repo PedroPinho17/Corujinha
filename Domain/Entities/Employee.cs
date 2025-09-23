@@ -1,10 +1,12 @@
-﻿
+﻿using AnotherDotnetToolkit.AspNetCore;
 using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class Employee : IEntity
-    // represents an employee in the system (empregado)
+    /**
+     * Represents an employee in the system (empregado)
+     */
+    public class Employee : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

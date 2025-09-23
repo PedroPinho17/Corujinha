@@ -1,5 +1,5 @@
 ﻿using AnotherDotnetToolkit.MediatR.Commands;
-using CorujinhaAPI.Domain.entities;
+using CorujinhaAPI.Domain.Entities;
 
 namespace Application.HumanResources.Employees
 {
@@ -9,7 +9,6 @@ namespace Application.HumanResources.Employees
         public string Email { get; set; }
         public string? PhoneNumber { get; set; }
         public DateTime BirthDate { get; set; }
-        public Guid EmployeeCategoryId { get; set; }
     }
 
     public class EmployeeUpdateCommand : EmployeeCreateCommand, IUpdateCommand<Employee>

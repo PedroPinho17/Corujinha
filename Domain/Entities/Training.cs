@@ -1,9 +1,12 @@
-﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
+﻿using AnotherDotnetToolkit.AspNetCore;
+using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class Training : IEntity
-    // Represents a training session within the organization (formacao)
+    /**
+     * Represents a training session or course (formação)
+     */
+    public class Training : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

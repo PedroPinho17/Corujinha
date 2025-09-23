@@ -3,11 +3,10 @@ using AnotherDotnetToolkit.MediatR.Commands;
 using AnotherDotnetToolkit.MediatR.Commands.handlers;
 using AnotherDotnetToolkit.MediatR.Queries;
 using AnotherDotnetToolkit.MediatR.Queries.handlers;
-using Application.HumanResources.EmployeeCategories;
 using Application.HumanResources.Employees;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using CorujinhaAPI.Domain.entities;
+using CorujinhaAPI.Domain.Entities;
 
 namespace Application.HumanResourcesDomainModule
 {
@@ -25,7 +24,6 @@ namespace Application.HumanResourcesDomainModule
                 configuration.RegisterServicesFromAssembly(typeof(HumanResourcesDomainModule).Assembly);
             });
 
-            AddEntityHandlers<EmployeeCategory, EmployeeCategoryCreateCommand, EmployeeCategoryUpdateCommand, EmployeeCategoryDeleteCommand, GetAllEmployeeCategoriesQuery, GetEmployeeCategoryByIdQuery>(services);
             AddEntityHandlers<Employee, EmployeeCreateCommand, EmployeeUpdateCommand, EmployeeDeleteCommand, GetAllEmployeesQuery, GetEmployeeByIdQuery>(services);
 
             return services;
