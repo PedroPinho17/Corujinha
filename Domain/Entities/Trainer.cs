@@ -1,15 +1,13 @@
-﻿
-using AnotherDotnetToolkit.AspNetCoreExtensions;
+﻿using AnotherDotnetToolkit.AspNetCoreExtensions;
 
 namespace CorujinhaAPI.Domain.Entities
 {
-    public class Employee : IEntity
-    // represents an employee in the system (empregado)
+    public class Trainer : IEntity
+    // Represents a trainer or instructor for training sessions (formador)
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string? PhoneNumber { get; set; }
-        public DateTime BirthDate { get; set; }
     }
 }
