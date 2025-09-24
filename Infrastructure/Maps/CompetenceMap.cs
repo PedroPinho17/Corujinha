@@ -1,5 +1,4 @@
-﻿
-using CorujinhaAPI.Domain.Entities;
+﻿using CorujinhaAPI.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

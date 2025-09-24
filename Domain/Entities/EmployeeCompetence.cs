@@ -6,7 +6,9 @@ namespace CorujinhaAPI.Domain.Entities
     public class EmployeeCompetence : BaseEntity, IEntity
     {
         public Guid Id { get; set; }
-        public Employee EmployeeId { get; set; }
-        public Competence CompetenceId { get; set; }
+        public Guid EmployeeId { get; set; }
+        public Guid CompetenceId { get; set; }
+        public Employee? Employee { get; set; }
+        public Competence? Competence { get; set; }
     }
 }
