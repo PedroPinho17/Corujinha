@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(CorujinhaDbContext))]
-    [Migration("20250925072440_Added_Audit_Attributes_And_Relationships")]
-    partial class Added_Audit_Attributes_And_Relationships
+    [Migration("20250925075922_Added_Employee_Trainer_Training_Competence_Entities")]
+    partial class Added_Employee_Trainer_Training_Competence_Entities
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
