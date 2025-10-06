@@ -3,10 +3,16 @@ using AnotherDotnetToolkit.MediatR.Commands;
 using AnotherDotnetToolkit.MediatR.Commands.handlers;
 using AnotherDotnetToolkit.MediatR.Queries;
 using AnotherDotnetToolkit.MediatR.Queries.handlers;
+using Application.HumanResources.Competences;
 using Application.HumanResources.Employees;
+using Application.HumanResources.EmployeeCompetences;
+using Application.HumanResources.TrainerCompetences;
+using Application.HumanResources.Trainers;
+using Application.HumanResources.TrainerTrainings;
+using Application.HumanResources.Trainings;
+using CorujinhaAPI.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using CorujinhaAPI.Domain.Entities;
 
 namespace Application.HumanResourcesDomainModule
 {
@@ -25,6 +31,12 @@ namespace Application.HumanResourcesDomainModule
             });
 
             AddEntityHandlers<Employee, EmployeeCreateCommand, EmployeeUpdateCommand, EmployeeDeleteCommand, GetAllEmployeesQuery, GetEmployeeByIdQuery>(services);
+            AddEntityHandlers<Competence, CompetenceCreateCommand, CompetenceUpdateCommand, CompetenceDeleteCommand, GetAllCompetencesQuery, GetCompetenceByIdQuery>(services);
+            AddEntityHandlers<EmployeeCompetence, EmployeeCompetenceCreateCommand, EmployeeCompetenceUpdateCommand, EmployeeCompetenceDeleteCommand, GetAllEmployeeCompetencesQuery, GetEmployeeCompetenceByIdQuery>(services);
+            AddEntityHandlers<TrainerCompetence, TrainerCompetenceCreateCommand, TrainerCompetenceUpdateCommand, TrainerCompetenceDeleteCommand, GetAllTrainerCompetencesQuery, GetTrainerCompetenceByIdQuery>(services);
+            AddEntityHandlers<Trainer, TrainerCreateCommand, TrainerUpdateCommand, TrainerDeleteCommand, GetAllTrainersQuery, GetTrainerByIdQuery>(services);
+            AddEntityHandlers<TrainerTraining, TrainerTrainingCreateCommand, TrainerTrainingUpdateCommand, TrainerTrainingDeleteCommand, GetAllTrainerTrainingsQuery, GetTrainerTrainingByIdQuery>(services);
+            AddEntityHandlers<Training, TrainingCreateCommand, TrainingUpdateCommand, TrainingDeleteCommand, GetAllTrainingsQuery, GetTrainingByIdQuery>(services);
 
             return services;
         }
