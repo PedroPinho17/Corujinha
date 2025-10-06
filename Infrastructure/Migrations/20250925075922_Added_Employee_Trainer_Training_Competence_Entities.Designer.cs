@@ -4,6 +4,7 @@ using CorujinhaAPI.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(CorujinhaDbContext))]
-    partial class ExampleProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250925075922_Added_Employee_Trainer_Training_Competence_Entities")]
+    partial class Added_Employee_Trainer_Training_Competence_Entities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,13 +97,13 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CompetenceIdId")
+                    b.Property<Guid>("CompetenceId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("EmployeeIdId")
+                    b.Property<Guid>("EmployeeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
@@ -111,9 +114,9 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompetenceIdId");
+                    b.HasIndex("CompetenceId");
 
-                    b.HasIndex("EmployeeIdId");
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("EmployeeCompetence");
                 });
@@ -155,7 +158,7 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CompetenceIdId")
+                    b.Property<Guid>("CompetenceId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -167,14 +170,14 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("TrainerIdId")
+                    b.Property<Guid>("TrainerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompetenceIdId");
+                    b.HasIndex("CompetenceId");
 
-                    b.HasIndex("TrainerIdId");
+                    b.HasIndex("TrainerId");
 
                     b.ToTable("TrainerCompetence");
                 });
@@ -194,17 +197,17 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("TrainerIdId")
+                    b.Property<Guid>("TrainerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TrainingIdId")
+                    b.Property<Guid>("TrainingId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TrainerIdId");
+                    b.HasIndex("TrainerId");
 
-                    b.HasIndex("TrainingIdId");
+                    b.HasIndex("TrainingId");
 
                     b.ToTable("TrainerTraining");
                 });
@@ -252,59 +255,59 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("CorujinhaAPI.Domain.Entities.EmployeeCompetence", b =>
                 {
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Competence", "CompetenceId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Competence", "Competence")
                         .WithMany()
-                        .HasForeignKey("CompetenceIdId")
+                        .HasForeignKey("CompetenceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Employee", "EmployeeId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Employee", "Employee")
                         .WithMany()
-                        .HasForeignKey("EmployeeIdId")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CompetenceId");
+                    b.Navigation("Competence");
 
-                    b.Navigation("EmployeeId");
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("CorujinhaAPI.Domain.Entities.TrainerCompetence", b =>
                 {
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Competence", "CompetenceId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Competence", "Competence")
                         .WithMany()
-                        .HasForeignKey("CompetenceIdId")
+                        .HasForeignKey("CompetenceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Trainer", "TrainerId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Trainer", "Trainer")
                         .WithMany()
-                        .HasForeignKey("TrainerIdId")
+                        .HasForeignKey("TrainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CompetenceId");
+                    b.Navigation("Competence");
 
-                    b.Navigation("TrainerId");
+                    b.Navigation("Trainer");
                 });
 
             modelBuilder.Entity("CorujinhaAPI.Domain.Entities.TrainerTraining", b =>
                 {
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Trainer", "TrainerId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Trainer", "Trainer")
                         .WithMany()
-                        .HasForeignKey("TrainerIdId")
+                        .HasForeignKey("TrainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CorujinhaAPI.Domain.Entities.Training", "TrainingId")
+                    b.HasOne("CorujinhaAPI.Domain.Entities.Training", "Training")
                         .WithMany()
-                        .HasForeignKey("TrainingIdId")
+                        .HasForeignKey("TrainingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("TrainerId");
+                    b.Navigation("Trainer");
 
-                    b.Navigation("TrainingId");
+                    b.Navigation("Training");
                 });
 #pragma warning restore 612, 618
         }
